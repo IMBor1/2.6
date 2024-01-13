@@ -45,13 +45,23 @@ public class Main {
     }
 
     public static void task4() {
+
+        Map<String, Integer> map = new HashMap<>();
         for (String string : strings) {
-            int count = Collections.frequency(strings, string);
-            System.out.println(count);
+            if (map.containsKey(string)) {
+                Integer count = map.get(string);
+                map.put(string, count + 1);
+            } else {
+                map.put(string, 1);
+            }
+
         }
+        System.out.println(map.values());
+
     }
 
 }
+
 
 
 
